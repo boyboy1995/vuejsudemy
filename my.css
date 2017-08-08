@@ -1,0 +1,26 @@
+.demo {
+  width: 100px;
+  height: 100px;
+  background-color: #111111;
+  display: inline-block;
+  margin: 10px;
+}
+
+.navy {
+  background-color: #001f3f;
+}
+.aqua {
+  background-color: #7FDBFF;
+}
+.teal {
+  background-color: #39CCCC;
+}
+.red {
+  background-color: #85144b;
+}
+.yellow {
+  background-color: #FFDC00;
+}
+.orange {
+  background-color: #FF851B;
+}

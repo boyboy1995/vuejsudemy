@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>VueJS 2 Course</title>
+    <script src="vue.js" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="./my.css">
+  </head>
+  <body>
+    <!-- built files will be auto injected -->
+    <div id="app">
+      <h1 v-once>{{ title }}</h1>
+      <p>{{ sayHello() }} - <a v-bind:href="mylink">This is google link</a></p>  <!-- v-bind:href = :href (shortkey) -->
+      <hr>
+      <p v-html="finishedLink"></p>
+      <button v-on:click="increase(5, $event)">UpCount by 5</button> <!-- v-on:click = @click (shortkey) -->
+      <button v-on:click="count++">UpCount by 1</button>
+      <h2>{{count}} || {{ count * 2 > 100 ? 'Its greater than 100 after multiplying by 2!' : 'Its smaller than 100 even after multiplying by 2'  }}</h2>
+<!-- above shows js works in html template, but must not have complex function code(e.g. v-if) -->
+      <hr>
+
+      <button v-on:click="number++">UpNum by 1</button>
+      <button v-on:click="number--">DownNum by 1</button>
+      <button v-on:click="number2++">UpNum2 by 1</button>
+      <h3>Number: {{number}} || {{number2}}</h3>
+      <h3>Result: {{result()}} || {{output}}</h3>
+      <hr>
+      <p v-on:mousemove="updatecoor">Coordinates X:{{x}} , Y: {{y}}</p>
+      <span v-on:mousemove.stop.prevent="">DEAD SPOT</span>
+      <hr>
+      <h3>browser alert if user hits enter</h3>
+      <input type="text" v-on:keyup.enter="alertMe" placeholder="Enter to pop alert out!">
+<!-- above shows directive v-on with keyup."any key" triggers browser pop-up message/alert  -->
+      <hr>
+      <input type="text" v-model="name">
+      <p>{{name}}</p>
+<!-- above shows "name" property can be changed according to user input by using v-model   -->
+    <hr>
+    <h3>VueJS Color Binding</h3>
+    <div class="demo" @click="attachNavy = !attachNavy" :class="changeColor"></div>
+    <div class="demo" :class="{navy: attachNavy}"></div>
+    <div class="demo" :class="[color, {navy: attachNavy}]"></div>
+    <h3>customizable box</h3>
+    <div class="demo" :style="customStyle"></div>
+    <input type="text" v-model="width" placeholder="Width Input">
+    <p>Insert any color type or click the first box</p>
+    <input type="text" v-model="color" placeholder="color type">
+    </div>
+
+
+
+<script src="App.vue" charset="utf-8"></script>
+  </body>
+</html>
