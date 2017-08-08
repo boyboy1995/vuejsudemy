@@ -1,4 +1,4 @@
-new Vue({
+new Vue({ //<div class="demo" :style="[customStyle, {height: width + 'px'}]">
   el: '#app',
   data: {
     x: 0,
@@ -12,7 +12,7 @@ new Vue({
     finishedLink: '<a href="http://www.google.com">Google come</a>',
     attachNavy: false,
     color: '',
-    width: 100
+    width: ''
   },
   computed: {
     output: function() {
@@ -27,7 +27,7 @@ new Vue({
     },
     customStyle: function() {
       return {
-        background: this.color,
+        backgroundColor: this.color,
         width: this.width + 'px'
       }
     }

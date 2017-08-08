@@ -40,11 +40,20 @@
     <div class="demo" @click="attachNavy = !attachNavy" :class="changeColor"></div>
     <div class="demo" :class="{navy: attachNavy}"></div>
     <div class="demo" :class="[color, {navy: attachNavy}]"></div>
-    <h3>customizable box</h3>
+    <h3>TryMe Boxes </h3>
     <div class="demo" :style="customStyle"></div>
-    <input type="text" v-model="width" placeholder="Width Input">
-    <p>Insert any color type or click the first box</p>
+    <div class="demo" :style="{backgroundColor: color}"></div>
+    <div class="demo" :style="[customStyle, {height: width + 'px'}]">
+      <div class="wrap">
+          <p>Insert any color type or click the first box</p>
+      </div>
+    </div>
+    <hr>
+
     <input type="text" v-model="color" placeholder="color type">
+    <input type="text" v-model="width" placeholder="Width Input">
+
+
     </div>
 
 
